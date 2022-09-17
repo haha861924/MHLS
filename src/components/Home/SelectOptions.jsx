@@ -1,10 +1,15 @@
 import { Select } from "flowbite-react";
 
-export default function SelectOptions({ onChange, data, required = true }) {
+export default function SelectOptions({
+  onChange,
+  data,
+  required = true,
+  disabled = false,
+}) {
   return (
-    <Select required={required} onChange={onChange}>
+    <Select required={required} onChange={onChange} disabled={disabled}>
       {data.map(({ describe, value }) => (
-        <option key={value}>{describe}</option>
+        <option key={describe}>{describe}</option>
       ))}
     </Select>
   );

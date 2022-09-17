@@ -1,7 +1,4 @@
-export const Gender = [
-  { describe: "男性", value: 1 },
-  { describe: "女性", value: 2 },
-];
+export const Gender = [{ describe: "男性" }, { describe: "女性" }];
 
 export const Activity = [
   { describe: "幾乎不動" },
@@ -12,7 +9,7 @@ export const Activity = [
 ];
 
 export const Pregnancy = [
-  { describe: "" },
+  { describe: "無" },
   { describe: "第一孕期" },
   { describe: "第二孕期" },
   { describe: "第三孕期" },
