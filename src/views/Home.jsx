@@ -1,6 +1,11 @@
+import { useState } from "react";
 import { Icon } from "../components/icon";
+import Form from "./Forms";
 
 export default function Home() {
+  const [show, setShow] = useState(true);
+  const onClick = () => setShow(!show);
+
   return (
     <div className="text-blue-gray-300 space-y-5 font-normal">
       <div className="text-white font-normal bg-green-gray w-fit px-1">
@@ -24,9 +29,13 @@ export default function Home() {
         如身高、體重...，立刻就能計算出您的健康指標。
       </p>
       <p className="py-6">感謝王介立醫師辛苦整理的健康計算公式</p>
-      <button className="bg-dark-green text-white rounded-lg w-60 py-2 font-black">
+      <button
+        onClick={onClick}
+        className="bg-dark-green text-white rounded-lg w-60 py-2 font-black"
+      >
         開始計算
       </button>
+      <Form show={show} onClick={onClick} />
     </div>
   );
 }
