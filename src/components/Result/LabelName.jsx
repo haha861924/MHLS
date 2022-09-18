@@ -2,6 +2,8 @@ import { Icon } from "../icon";
 import { Tooltip } from "flowbite-react";
 import SelectOptions from "../Home/SelectOptions";
 import { useEffect, useState } from "react";
+import Counter from "./Counter";
+import useStore from "../../store";
 
 function SelectResult({ item, label }) {
   const [select, setSelect] = useState(item[0]);
@@ -20,6 +22,7 @@ function SelectResult({ item, label }) {
           </Tooltip>
         )}
       </div>
+      <Counter data={useStore()} fn={select.fn && select.fn} />
     </div>
   );
 }
@@ -27,10 +30,17 @@ function SelectResult({ item, label }) {
 function Result({ item }) {
   return (
     <>
-      <label className="text-xl font-black text-blue-gray">{item.title}</label>
-      <Tooltip content={item.info} style="dark">
-        <Icon.info className="w-4" />
-      </Tooltip>
+      <div className="flex space-x-2 items-center">
+        <label className="text-xl font-black text-blue-gray">
+          {item.title}
+        </label>
+        {item.info && (
+          <Tooltip content={item.info} style="dark">
+            <Icon.info className="w-4" />
+          </Tooltip>
+        )}
+      </div>
+      <Counter data={useStore()} fn={item.fn && item.fn} />
     </>
   );
 }
@@ -42,12 +52,12 @@ export default function LabelName({ item, label }) {
   }, []);
 
   return (
-    <div className="flex space-x-2 items-center">
+    <>
       {show ? (
         <SelectResult item={item} label={label} />
       ) : (
         <Result item={item} />
       )}
-    </div>
+    </>
   );
 }
