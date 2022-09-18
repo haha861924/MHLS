@@ -23,8 +23,8 @@ const useStore = create((set) => ({
   setWaistLine: (value) => set({ waistLine: Number(value) }),
   setActivity: (value) => set({ activity: value }),
   setPregnancy: (value) => set({ pregnancy: value }),
-  count: 1,
-  add: () => set(({ count }) => ({ count: count + 1 })),
+  count: false,
+  setCount: () => set(({ count }) => ({ count: !count })),
 }));
 
 export default useStore;
