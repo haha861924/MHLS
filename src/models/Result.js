@@ -1,15 +1,20 @@
+import { calcBMI, calcWHtR } from "../utils/BodyMass";
+
 export const dailyCalories = {
   title: "每日熱量攝取建議",
   info: "根據活動量及最低 BMR 計算",
+  // fn: (data) => calcBMI(data),
 };
 
 export const BMI = {
   title: "BMI",
+  fn: (data) => calcBMI(data),
 };
 
 export const WHtR = {
   title: "腰圍身高比",
   info: "<0.5 無風險; >= 0.6 高風險",
+  fn: (data) => calcWHtR(data),
 };
 
 export const BMR = [
