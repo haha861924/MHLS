@@ -4,13 +4,13 @@ import { Activity, Pregnancy } from "../models/Information";
 
 const init = {
   gender: "男性",
-  birth: dayjs().format("YYYY-MM-DD"),
+  birth: dayjs("1997/10/30").format("YYYY-MM-DD"),
   height: 173,
   weight: 55,
   bodyFat: 20,
   waistLine: 78,
-  activity: Activity[0].describe,
-  pregnancy: Pregnancy[0].describe,
+  activity: Activity[0].title,
+  pregnancy: Pregnancy[0].title,
 };
 
 const useStore = create((set) => ({

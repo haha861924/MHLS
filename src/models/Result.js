@@ -5,6 +5,8 @@ import {
   calcOxfordEquation,
   calcRevisedHarrisBenedict,
   calcRobertsonAndReidHigh,
+  calcRobertsonAndReidLow,
+  calcRobertsonAndReidMean,
 } from "../utils/BMR";
 import { calcFAO, calcRedman } from "../utils/TDEE";
 import {
@@ -14,11 +16,12 @@ import {
   calcMosteller,
   calcHaycock,
 } from "../utils/BSA";
+import { calcDailyCalories } from "../utils/Calories";
 
 export const dailyCalories = {
   title: "每日熱量攝取建議",
   info: "根據活動量及最低 BMR 計算",
-  // fn: (data) => calcDailyCalories(data),
+  fn: (data) => calcDailyCalories(data),
 };
 
 export const BMI = {
@@ -36,17 +39,17 @@ export const BMR = [
   {
     title: "Roberson and Reid(Mean)",
     info: "適用於肥胖者",
-    fn: (data) => calcRobertsonAndReidHigh("Mean", data),
+    fn: (data) => calcRobertsonAndReidMean(data),
   },
   {
     title: "Roberson and Reid(Low)",
     info: "適用於肥胖者",
-    fn: (data) => calcRobertsonAndReidHigh("Low", data),
+    fn: (data) => calcRobertsonAndReidLow(data),
   },
   {
     title: "Roberson and Reid(Heigh)",
     info: "適用於肥胖者",
-    fn: (data) => calcRobertsonAndReidHigh("High", data),
+    fn: (data) => calcRobertsonAndReidHigh(data),
   },
   {
     title: "Revised Harris-Benedict",

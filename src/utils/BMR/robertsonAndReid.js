@@ -69,6 +69,6 @@ const fn = (estimate, { birth, height, weight, gender }) => {
   return base.times(parameter).round().toString();
 };
 
-export const calcRobertsonAndReidLow = (estimate, data) => fn(estimate, data);
-export const calcRobertsonAndReidMean = (estimate, data) => fn(estimate, data);
-export const calcRobertsonAndReidHigh = (estimate, data) => fn(estimate, data);
+export const calcRobertsonAndReidLow = (data) => fn("Low", data);
+export const calcRobertsonAndReidMean = (data) => fn("Mean", data);
+export const calcRobertsonAndReidHigh = (data) => fn("High", data);
