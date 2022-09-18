@@ -13,6 +13,7 @@ export default function Form({ show, onClick }) {
     setWaistLine,
     setActivity,
     setPregnancy,
+    setCount,
   } = useStore();
   const {
     gender,
@@ -27,6 +28,8 @@ export default function Form({ show, onClick }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setCount();
+    onClick();
   };
 
   return (

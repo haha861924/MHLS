@@ -11,7 +11,7 @@ export default function Footer() {
             <label className="text-white bg-blue-gray">{item.title}</label>
           </div>
           <div>
-            <p>{item.describe}</p>
+            <p>{item.info}</p>
           </div>
         </div>
       ))}
