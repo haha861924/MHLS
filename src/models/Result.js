@@ -1,4 +1,11 @@
 import { calcBMI, calcWHtR } from "../utils/BodyMass";
+import {
+  calcKatchMcArdle,
+  calcMifflinStJeor,
+  calcOxfordEquation,
+  calcRevisedHarrisBenedict,
+  calcRobertsonAndReidHigh,
+} from "../utils/BMR";
 
 export const dailyCalories = {
   title: "每日熱量攝取建議",
@@ -21,28 +28,35 @@ export const BMR = [
   {
     title: "Roberson and Reid(Mean)",
     info: "適用於肥胖者",
+    fn: (data) => calcRobertsonAndReidHigh("Mean", data),
   },
   {
     title: "Roberson and Reid(Low)",
     info: "適用於肥胖者",
+    fn: (data) => calcRobertsonAndReidHigh("Low", data),
   },
   {
     title: "Roberson and Reid(Heigh)",
     info: "適用於肥胖者",
+    fn: (data) => calcRobertsonAndReidHigh("High", data),
   },
   {
     title: "Revised Harris-Benedict",
+    fn: (data) => calcRevisedHarrisBenedict(data),
   },
   {
     title: "Mifflin-St Jeor",
+    fn: (data) => calcMifflinStJeor(data),
   },
   {
     title: "Katch-McArdle",
     info: "計算包含體脂",
+    fn: (data) => calcKatchMcArdle(data),
   },
   {
     title: "Oxford Equation",
     info: "僅支援18歲至80歲之年齡",
+    fn: (data) => calcOxfordEquation(data),
   },
 ];
 

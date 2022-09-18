@@ -1,0 +1,26 @@
+import dayjs from "dayjs";
+import Decimal from "decimal.js";
+
+// # Men
+// BMR = 10 x weight[kg] + 6.25 x height[cm] - 5 x age[y] + 5
+// # Women
+// BMR = 10 x weight[kg] + 6.25 x height[cm] - 5 x age[y] - 161
+// function fn(bodyInfo: BodyInfo) {
+//   const { height, weight, gender, birth } = bodyInfo;
+
+//   return new Decimal(new Decimal(10).times(weight))
+//     .plus(new Decimal(6.25).times(height))
+//     .minus(new Decimal(yearfrac(birth, new Date())).ceil().times(5))
+//     .add(gender === Gender.Male ? 5 : -161)
+//     .round()
+//     .toString();
+// }
+
+export const calcMifflinStJeor = ({ height, weight, gender, birth }) => {
+  return new Decimal(new Decimal(10).times(weight))
+    .plus(new Decimal(6.25).times(height))
+    .minus(new Decimal(dayjs().year() - dayjs(birth).year()).ceil().times(5))
+    .add(gender === "男性" ? 5 : -161)
+    .round()
+    .toString();
+};
