@@ -14,8 +14,8 @@ export default function SelectOptions({
       disabled={disabled}
       value={value}
     >
-      {data.map(({ describe, value }) => (
-        <option key={describe}>{describe}</option>
+      {data.map(({ title }) => (
+        <option key={title}>{title}</option>
       ))}
     </Select>
   );
