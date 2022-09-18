@@ -52,12 +52,12 @@ export default function LabelName({ item, label }) {
   }, []);
 
   return (
-    <>
+    <div>
       {show ? (
         <SelectResult item={item} label={label} />
       ) : (
         <Result item={item} />
       )}
-    </>
+    </div>
   );
 }
