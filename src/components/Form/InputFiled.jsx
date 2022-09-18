@@ -1,19 +1,28 @@
 import { Label, TextInput } from "flowbite-react";
 import SelectOptions from "../Home/SelectOptions";
 
-const Select = ({ htmlFor, data, onChange, disabled }) => {
+const Select = ({ htmlFor, data, onChange, disabled, value }) => {
   return (
     <SelectOptions
       id={htmlFor}
       data={data}
       onChange={onChange}
       disabled={disabled}
+      value={value}
     />
   );
 };
 
-const TextFiled = ({ htmlFor, type }) => {
-  return <TextInput type={type} id={htmlFor} name={htmlFor} />;
+const TextFiled = ({ htmlFor, type, value, onChange }) => {
+  return (
+    <TextInput
+      type={type}
+      id={htmlFor}
+      name={htmlFor}
+      value={value}
+      onChange={onChange}
+    />
+  );
 };
 
 export default function InputField({
@@ -24,6 +33,7 @@ export default function InputField({
   data,
   type = "text",
   disabled = false,
+  value,
 }) {
   return (
     <div className="grid w-full">
@@ -34,9 +44,15 @@ export default function InputField({
           data={data}
           onChange={onChange}
           disabled={disabled}
+          value={value}
         />
       ) : (
-        <TextFiled htmlFor={htmlFor} type={type} />
+        <TextFiled
+          htmlFor={htmlFor}
+          type={type}
+          value={value}
+          onChange={onChange}
+        />
       )}
     </div>
   );
