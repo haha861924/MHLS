@@ -6,11 +6,19 @@ import {
   calcRevisedHarrisBenedict,
   calcRobertsonAndReidHigh,
 } from "../utils/BMR";
+import { calcFAO, calcRedman } from "../utils/TDEE";
+import {
+  calcDubois,
+  calcDuboisCorrected,
+  calcYu,
+  calcMosteller,
+  calcHaycock,
+} from "../utils/BSA";
 
 export const dailyCalories = {
   title: "每日熱量攝取建議",
   info: "根據活動量及最低 BMR 計算",
-  // fn: (data) => calcBMI(data),
+  // fn: (data) => calcDailyCalories(data),
 };
 
 export const BMI = {
@@ -64,21 +72,26 @@ export const BSA = [
   {
     title: "Dubois",
     info: "肥胖者會低估3-5%",
+    fn: (data) => calcDubois(data),
   },
   {
     title: "Dubois, Corrected",
     info: "校正肥胖不準確",
+    fn: (data) => calcDuboisCorrected(data),
   },
   {
     title: "Yu, 2013",
     info: "研究來自台灣工人",
+    fn: (data) => calcYu(data),
   },
   {
     title: "Haycock, 1978",
     info: "可適用BSA 0.2-2.0(嬰兒適用)",
+    fn: (data) => calcHaycock(data),
   },
   {
     title: "Mosteller, 1987",
+    fn: (data) => calcMosteller(data),
   },
 ];
 
@@ -86,9 +99,11 @@ export const TDEE = [
   {
     title: "FAO, 1957",
     info: "來自FAO的營養研究",
+    fn: (data) => calcFAO(data),
   },
   {
     title: "Redman",
     info: "來自雙標水研究",
+    fn: (data) => calcRedman(data),
   },
 ];
