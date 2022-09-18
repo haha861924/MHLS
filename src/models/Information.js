@@ -15,5 +15,3 @@ export const Pregnancy = [
   { describe: "第三孕期" },
   { describe: "哺乳" },
 ];
-
-export const Basic = [{ data: 173, id: "身高(公分)" }];
