@@ -61,24 +61,28 @@ export default function Form({ show, onClick }) {
                   htmlFor="height"
                   label="身高(公分)"
                   value={height}
+                  placeholder={173}
                   onChange={({ target }) => setHeight(target.value)}
                 />
                 <InputField
                   htmlFor="weight"
                   label="體重(公斤)"
                   value={weight}
+                  placeholder={65}
                   onChange={({ target }) => setWeight(target.value)}
                 />
                 <InputField
                   htmlFor="bodyFat"
                   label="體脂(%)"
                   value={bodyFat}
+                  placeholder={20}
                   onChange={({ target }) => setBodyFat(target.value)}
                 />
                 <InputField
                   htmlFor="waistLine"
                   label="腰圍(公分)"
                   value={waistLine}
+                  placeholder={34}
                   onChange={({ target }) => setWaistLine(target.value)}
                 />
               </div>

@@ -13,7 +13,7 @@ const Select = ({ htmlFor, data, onChange, disabled, value }) => {
   );
 };
 
-const TextFiled = ({ htmlFor, type, value, onChange }) => {
+const TextFiled = ({ htmlFor, type, value, onChange, placeholder }) => {
   return (
     <TextInput
       type={type}
@@ -21,6 +21,8 @@ const TextFiled = ({ htmlFor, type, value, onChange }) => {
       name={htmlFor}
       value={value}
       onChange={onChange}
+      required={true}
+      placeholder={placeholder}
     />
   );
 };
@@ -34,6 +36,7 @@ export default function InputField({
   type = "text",
   disabled = false,
   value,
+  placeholder,
 }) {
   return (
     <div className="grid w-full">
@@ -52,6 +55,7 @@ export default function InputField({
           type={type}
           value={value}
           onChange={onChange}
+          placeholder={placeholder}
         />
       )}
     </div>
