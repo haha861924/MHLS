@@ -1,10 +1,15 @@
 import { useState } from "react";
+import useStore from "../store";
 import { Icon } from "../components/icon";
 import Form from "./Forms";
 
 export default function Home() {
   const [show, setShow] = useState(true);
-  const onClick = () => setShow(!show);
+  const { setReset } = useStore();
+  const onClick = () => {
+    setShow(!show);
+    setReset();
+  };
 
   return (
     <div className="text-blue-gray-300 space-y-5 font-normal">
