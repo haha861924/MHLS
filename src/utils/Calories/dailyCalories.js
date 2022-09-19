@@ -46,5 +46,7 @@ export const calcDailyCalories = (bodyInfo) => {
     .map((func) => func(bodyInfo));
 
   const min = Math.min(...BMRs.map(Number));
+  if (isNaN(min)) return "僅支援18歲至80歲之年齡";
+
   return new Decimal(min).times(ratio).round().toString();
 };

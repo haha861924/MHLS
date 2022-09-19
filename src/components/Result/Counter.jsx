@@ -1,7 +1,9 @@
 export default function Counter({ data, fn }) {
+  const { bodyFat, height, weight } = data;
+
   return (
     <div className="text-xl font-black text-blue-gray mt-2">
-      {fn ? fn(data) : "沒有"}
+      {!!bodyFat && height && weight && fn ? fn(data) : "-"}
     </div>
   );
 }

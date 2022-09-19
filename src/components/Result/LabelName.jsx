@@ -1,7 +1,7 @@
-import { Icon } from "../icon";
 import { Tooltip } from "flowbite-react";
+import { useState } from "react";
+import { Icon } from "../icon";
 import SelectOptions from "../Home/SelectOptions";
-import { useEffect, useState } from "react";
 import Counter from "./Counter";
 import useStore from "../../store";
 
@@ -11,6 +11,7 @@ function SelectResult({ item, label }) {
     const data = item.filter(({ title }) => title === target.value);
     setSelect(data[0]);
   };
+
   return (
     <div className="w-full">
       <SelectOptions value={item.title} onChange={onChange} data={item} />
@@ -45,15 +46,9 @@ function Result({ item }) {
   );
 }
 export default function LabelName({ item, label }) {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    setShow(Array.isArray(item));
-  }, []);
-
   return (
     <div>
-      {show ? (
+      {Array.isArray(item) ? (
         <SelectResult item={item} label={label} />
       ) : (
         <Result item={item} />
