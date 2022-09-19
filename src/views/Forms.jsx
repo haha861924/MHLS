@@ -14,6 +14,7 @@ export default function Form({ show, onClick }) {
     setActivity,
     setPregnancy,
     setCount,
+    setReset,
   } = useStore();
   const {
     gender,
@@ -28,7 +29,7 @@ export default function Form({ show, onClick }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setCount();
+    setCount(true);
     onClick();
   };
 
@@ -112,6 +113,9 @@ export default function Form({ show, onClick }) {
             <Button type="submit">確定</Button>
             <Button color="gray" onClick={onClick}>
               取消
+            </Button>
+            <Button color="gray" onClick={setReset}>
+              清除
             </Button>
           </Modal.Footer>
         </form>

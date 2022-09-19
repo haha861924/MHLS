@@ -13,7 +13,7 @@ const useStore = create((set) => ({
   setActivity: (value) => set({ activity: value }),
   setPregnancy: (value) => set({ pregnancy: value }),
   count: false,
-  setCount: () => set(({ count }) => ({ count: !count })),
+  setCount: (status) => set(({ count }) => ({ count: status })),
   setReset: () => set((state) => ({ ...state, ...BodyInfo })),
 }));
 
