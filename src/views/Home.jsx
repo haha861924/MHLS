@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Icon } from "../components/icon";
+import { Icon } from "../components/Icon";
 import { Form } from "./";
 
 export function Home() {

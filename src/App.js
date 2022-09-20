@@ -1,5 +1,5 @@
 import "./App.css";
-import { Icon } from "./components/icon";
+import { Icon } from "./components/Icon";
 import { Home, Footer, Result } from "./views";
 import useStore from "./store";
 
