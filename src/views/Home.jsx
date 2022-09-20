@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Icon } from "../components/icon";
-import Form from "./Forms";
+import { Form } from "./";
 
-export default function Home() {
+export function Home() {
   const [show, setShow] = useState(true);
   const onClick = () => setShow(!show);
 

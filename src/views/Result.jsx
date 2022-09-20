@@ -1,7 +1,7 @@
 import LabelName from "../components/Result/LabelName";
 import { dailyCalories, BMI, WHtR, BSA, BMR, TDEE } from "../models/Result";
 
-export default function Result() {
+export function Result() {
   return (
     <div className="">
       <div className="w-full grid grid-cols-3 place-content-center gap-1 mt-5 ">

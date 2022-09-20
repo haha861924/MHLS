@@ -1,7 +1,7 @@
 import { List } from "../models";
 import { Icon } from "../components/icon";
 
-export default function Footer() {
+export function Footer() {
   return (
     <div className="flex w-fit text-blue-gray mt-10 font-black">
       {List.map((item) => (

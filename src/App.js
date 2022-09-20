@@ -1,11 +1,7 @@
 import "./App.css";
-import Home from "./views/Home";
 import { Icon } from "./components/icon";
-import Footer from "./views/Footer";
+import { Home, Footer, Result } from "./views";
 import useStore from "./store";
-import Result from "./views/Result";
-import { useEffect } from "react";
-import { BodyInfo } from "./models";
 
 function App() {
   const { count, height } = useStore();

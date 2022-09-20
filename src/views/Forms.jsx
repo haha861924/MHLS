@@ -3,7 +3,7 @@ import { Gender, Activity, Pregnancy } from "../models/Information";
 import InputField from "../components/Form/InputFiled";
 import useStore from "../store";
 
-export default function Form({ show, onClick }) {
+export function Form({ show, onClick }) {
   const {
     setGender,
     setBirth,
