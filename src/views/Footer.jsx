@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <div className="flex w-fit text-blue-gray mt-10 font-black">
       {List.map((item) => (
-        <div className="text-blue-gray" key={item.title}>
+        <div className="text-blue-gray flex flex-col" key={item.title}>
           <div className="flex">
             <Icon.item />
             <label className="text-white bg-blue-gray">{item.title}</label>
