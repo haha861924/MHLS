@@ -1,6 +1,6 @@
 import { Tooltip } from "flowbite-react";
 import { useState } from "react";
-import { Icon } from "../Icon";
+import { Icon } from "../icon";
 import SelectOptions from "../Home/SelectOptions";
 import Counter from "./Counter";
 import useStore from "../../store";

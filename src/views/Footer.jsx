@@ -1,5 +1,5 @@
 import { List } from "../models";
-import { Icon } from "../components/Icon";
+import { Icon } from "../components/icon";
 
 export function Footer() {
   return (
