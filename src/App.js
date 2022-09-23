@@ -12,7 +12,7 @@ function App() {
         <Home />
         {height && count ? <Result /> : <Footer />}
       </div>
-      <Icon.logo className="w-2/5 flex-auto right-0" />
+      <Icon.logo className="w-2/5 flex-auto right-0 " />
     </div>
   );
 }
